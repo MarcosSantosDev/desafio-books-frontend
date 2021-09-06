@@ -1,0 +1,140 @@
+{
+  "name": "desafio-books-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hookform/resolvers": "^2.0.0-rc.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.23",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^16.9.14",
+    "@types/styled-components": "^5.1.14",
+    "axios": "^0.21.4",
+    "browser-image-compression": "^1.0.15",
+    "history": "^5.0.1",
+    "react": "^17.0.2",
+    "react-content-loader": "^6.0.3",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.1.2",
+    "react-hook-form": "^6.15.8",
+    "react-intl": "^5.20.10",
+    "react-router-dom": "^6.0.0-beta.0",
+    "react-scripts": "^4.0.3",
+    "react-spinners": "^0.10.6",
+    "styled-components": "^5.3.1",
+    "styled-media-query": "^2.1.2",
+    "swr": "^0.4.2",
+    "typescript": "^4.4.2",
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject",
+    "build-storybook": "build-storybook -s public",
+    "commit": "npx git-cz",
+    "generate": "plop --plopfile ./generators/plop.js",
+    "lint": "eslint src --max-warnings=0",
+    "typecheck": "npx tsc --project tsconfig.json",
+    "sonar": "npm run test:coverage && npm run sonar:scanner",
+    "storybook": "start-storybook -p 6006 -s public --no-dll --no-manager-cache",
+    "stylelint": "stylelint 'src/**/*.styles.ts'",
+    "test:coverage": "npm test -- --coverage --testResultsProcessor=jest-sonar-reporter",
+    "sonar:scanner": "npx sonar-scanner",
+    "test:watch": "react-scripts test --watch"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run typecheck && npm run sonar"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run stylelint",
+      "npm run test --findRelatedTests"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/",
+      "!/generators/",
+      "!/public/",
+      "!/build/"
+    ]
+  },
+  "jestSonar": {
+    "sonar56x": true,
+    "reportPath": "coverage",
+    "reportFile": "sonar-report.xml",
+    "indent": 2
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.3.8",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8",
+    "@storybook/theming": "^6.3.8",
+    "@types/axios": "^0.14.0",
+    "@types/browser-image-compression": "^1.0.9",
+    "@types/react-easy-crop": "^2.0.0",
+    "@types/react-helmet": "^6.1.2",
+    "@types/react-router-dom": "^5.1.8",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "cz-lean-changelog": "0.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "git-commit-msg-linter": "^3.2.8",
+    "husky": "^4.3.8",
+    "jest-sonar-reporter": "^2.0.0",
+    "jest-styled-components": "^7.0.5",
+    "lint-staged": "^10.5.4",
+    "plop": "^2.7.4",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lean-changelog"
+    }
+  }
+}
