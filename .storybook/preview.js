@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
 import theme from 'styles/theme';
+import 'assets/fonts/Heebo/index.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

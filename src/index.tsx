@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { SWRConfig } from 'swr';
 import Routes from 'routes';
 import reportWebVitals from './reportWebVitals';
+import 'assets/fonts/Heebo/index.css';
 
 const swrConfigs = { revalidateOnFocus: false, shouldRetryOnError: false };
 
