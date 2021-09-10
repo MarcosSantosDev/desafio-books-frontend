@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Main from 'pages/Main';
+import { Login } from 'pages/account';
 
 export interface RouteProps {
   children?: React.ReactNode;
@@ -10,7 +10,7 @@ export interface RouteProps {
 const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   </BrowserRouter>
 );
