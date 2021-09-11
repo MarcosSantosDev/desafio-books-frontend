@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { isAuthenticated } from 'lib/core/session';
+import { Login } from 'pages/account';
 import { NotFound } from 'components/contexts/general';
 import { Private } from 'components/contexts/routes';
 
@@ -29,6 +30,7 @@ const AppRoutes = () => (
           </Private>
         }
       />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
