@@ -15,9 +15,9 @@ export const Wrapper = styled.main`
   grid-template-columns: 115px 368px 1fr;
   justify-content: center;
   align-items: center;
-
   max-width: 100%;
   height: 100vh;
+  padding: 0px 16px;
   background: url(${backgroundLogin});
   ${wrapperBackgroundStyled}
 
@@ -29,24 +29,21 @@ export const Wrapper = styled.main`
 `;
 
 export const FormContainer = styled.aside`
+  position: relative;
   grid-column: 2 / 3;
   display: grid;
-  grid-template-rows: 86px 140px;
+  grid-template-rows: auto auto;
   grid-template-columns: minmax(240px, 432px);
   justify-content: right;
   align-items: center;
   box-sizing: border-box;
 
   @media (max-width: 600px) {
-    padding: 0px 16px;
     justify-content: center;
   }
 `;
 
-export const Form = styled.form`
-  width: 100%;
-  height: 100%;
-`;
+export const Form = styled.form``;
 
 export const HeadingContent = styled.div`
   display: flex;
@@ -59,7 +56,7 @@ export const Img = styled.img`
   height: 36px;
 `;
 
-export const TextContent = styled.span`
+export const Heading = styled.h1`
   color: #ffffff;
   font-size: 28px;
   line-height: 40px;

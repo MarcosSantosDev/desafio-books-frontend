@@ -1,10 +1,9 @@
-import { FormEvent } from 'react';
-import { LoginForm } from 'components/contexts/acount';
+import { LoginForm, FormProps } from 'components/contexts/acount';
 
 export const Login = () => {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = (formData: FormProps) => {
+    console.log(formData);
   };
 
-  return <LoginForm handleSubmit={handleSubmit} />;
+  return <LoginForm onSubmit={handleSubmit} />;
 };

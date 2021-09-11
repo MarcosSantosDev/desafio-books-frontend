@@ -3,6 +3,7 @@ import { LoginForm } from './LoginForm';
 
 describe('<LoginForm />', () => {
   it('should render the LoginForm', () => {
-    const { container } = renderWithTheme(<LoginForm />);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const { container } = renderWithTheme(<LoginForm onSubmit={() => {}} />);
   });
 });
