@@ -52,7 +52,7 @@ export const Comtainer = styled.div`
   ${() => css`
     position: relative;
     width: calc(100vw - 230px);
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
 
     @media (max-width: 600px) {
