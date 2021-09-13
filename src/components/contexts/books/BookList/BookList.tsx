@@ -6,7 +6,7 @@ export type BookListProps = {
   children?: React.ReactChild;
 };
 
-const mockBookData = {
+const book = {
   cardImage: bookImageOne,
   bookName: 'Crossing the Chasm',
   bookAuthors: ['Geoffrey A. Moore'],
@@ -16,18 +16,18 @@ const mockBookData = {
 };
 
 const books = [
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
-  mockBookData,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
+  book,
 ];
 
 export const BookList = () => (

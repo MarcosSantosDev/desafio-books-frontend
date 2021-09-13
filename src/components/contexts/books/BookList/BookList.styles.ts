@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, 272px);
     grid-gap: 16px;
-    justify-content: center;
+    justify-content: left;
 
     @media (max-width: 600px) {
       grid-template-columns: repeat(auto-fit, 288px);
+      justify-content: center;
     }
   `}
 `;
