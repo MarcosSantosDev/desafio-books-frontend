@@ -3,24 +3,25 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     font-family: ${theme.typography.family.primary};
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-areas: 'bookImage bookInformation';
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    grid-column-gap: 21px;
+    box-sizing: border-box;
     padding: 16px;
-    max-width: 272px;
+    max-width: 288px;
     min-height: 160px;
     width: 100%;
     background: #ffffff;
     box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
     border-radius: 4px;
+
+    @media (min-width: 600px) {
+      max-width: 272px;
+    }
   `}
 `;
 
-export const ContentBookImage = styled.div`
-  grid-area: bookImage;
+export const ContentCardImage = styled.div`
   width: 81px;
   height: 100%;
   display: flex;
@@ -28,7 +29,7 @@ export const ContentBookImage = styled.div`
   align-items: center;
 `;
 
-export const BookImage = styled.img`
+export const CardImage = styled.img`
   max-width: 81px;
   max-height: 122px;
   width: 100%;
@@ -40,16 +41,17 @@ export const BookImage = styled.img`
   }
 `;
 
+export const ContentCardInformation = styled.div`
+  max-width: 138px;
+  width: 100%;
+`;
+
 export const WrapperMainInformation = styled.div`
   min-height: 68px;
   margin-bottom: 8px;
 `;
 
-export const ContentBookInformation = styled.div`
-  grid-area: bookInformation;
-`;
-
-export const BookTitle = styled.h1`
+export const CardTitle = styled.h1`
   word-break: break-all;
   font-style: normal;
   font-weight: 500;
@@ -60,7 +62,6 @@ export const BookTitle = styled.h1`
 
 export const Ul = styled.ul`
   ${() => css`
-    max-width: 138px;
     & > li {
       list-style: none;
       color: #999999;
@@ -68,7 +69,7 @@ export const Ul = styled.ul`
       line-height: 20px;
     }
 
-    & > #authorName {
+    & > #captionItem {
       list-style-position: inside;
       white-space: nowrap;
       overflow: hidden;

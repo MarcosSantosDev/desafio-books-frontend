@@ -1,42 +1,43 @@
 import * as S from './Card.styles';
 
 export type CardProps = {
+  id: number;
   cardImage: string;
-  bookName: string;
-  bookAuthors: string[];
-  totalPages: string;
-  bookPublisher: string;
-  publicationDate: string;
+  cardTitle: string;
+  cardCaptions: string[];
+  itemOne: string;
+  itemTwo: string;
+  itemThree: string;
 };
 
 export const Card = ({
   cardImage,
-  bookName,
-  totalPages,
-  bookPublisher,
-  publicationDate,
-  bookAuthors = [],
+  cardTitle,
+  itemOne,
+  itemTwo,
+  itemThree,
+  cardCaptions = [],
 }: CardProps) => (
   <S.Wrapper>
-    <S.ContentBookImage>
-      <S.BookImage src={cardImage} alt="book cover" />
-    </S.ContentBookImage>
-    <S.ContentBookInformation>
+    <S.ContentCardImage>
+      <S.CardImage src={cardImage} alt="ilustration" />
+    </S.ContentCardImage>
+    <S.ContentCardInformation>
       <S.WrapperMainInformation>
-        <S.BookTitle>{bookName}</S.BookTitle>
+        <S.CardTitle>{cardTitle}</S.CardTitle>
         <S.Ul>
-          {bookAuthors.map((author) => (
-            <li id="authorName" key={`${author}-${bookName}`}>
-              {author}
+          {cardCaptions.map((captionItem) => (
+            <li id="captionItem" key={`${cardTitle}-${captionItem}`}>
+              {captionItem}
             </li>
           ))}
         </S.Ul>
       </S.WrapperMainInformation>
       <S.Ul>
-        <li key={`total-pages-${bookName}`}>{totalPages} </li>
-        <li key={`book-publisher-${bookName}`}>{bookPublisher}</li>
-        <li key={`publication-date-${bookName}`}>{publicationDate}</li>
+        <li key={`item-one-${cardTitle}`}>{itemOne} </li>
+        <li key={`item-two-${cardTitle}`}>{itemTwo}</li>
+        <li key={`item-three-${cardTitle}`}>{itemThree}</li>
       </S.Ul>
-    </S.ContentBookInformation>
+    </S.ContentCardInformation>
   </S.Wrapper>
 );

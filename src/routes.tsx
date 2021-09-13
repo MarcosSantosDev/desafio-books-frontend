@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { isAuthenticated } from 'lib/core/session';
 import { Login } from 'pages/account';
+import { Books } from 'pages/books';
 import { NotFound } from 'components/contexts/general';
 import { Private } from 'components/contexts/routes';
 
@@ -11,26 +12,36 @@ export interface RouteProps {
   path?: string;
 }
 
-const PrivateRoute = (props: RouteProps) => {
-  if (!isAuthenticated()) {
-    return <Navigate to="/login" />;
+const PublicRoute = (props: RouteProps) => {
+  if (isAuthenticated()) {
+    return <Navigate to="/" />;
   }
 
   return <Route {...props} />;
 };
 
+const PrivateRoute = ({ element, ...props }: RouteProps) => {
+  if (!isAuthenticated()) {
+    return <Navigate to="/login" />;
+  }
+
+  return (
+    <Route
+      {...props}
+      element={
+        <Private>
+          <>{element}</>
+        </Private>
+      }
+    />
+  );
+};
+
 const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
-      <PrivateRoute
-        path="/"
-        element={
-          <Private>
-            <h2>Welcome to home!</h2>
-          </Private>
-        }
-      />
-      <Route path="/login" element={<Login />} />
+      <PrivateRoute path="/" element={<Books />} />
+      <PublicRoute path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
