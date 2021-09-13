@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { LoginForm, FormProps } from 'components/contexts/acount';
 
 export const Login = () => {
@@ -5,5 +6,10 @@ export const Login = () => {
     console.log(formData);
   };
 
-  return <LoginForm onSubmit={handleSubmit} />;
+  return (
+    <>
+      <Helmet title="Login - Ioasys books" />
+      <LoginForm onSubmit={handleSubmit} />
+    </>
+  );
 };
