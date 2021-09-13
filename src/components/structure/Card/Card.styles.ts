@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const ContentBookImage = styled.div`
+export const ContentCardImage = styled.div`
   width: 81px;
   height: 100%;
   display: flex;
@@ -29,7 +29,7 @@ export const ContentBookImage = styled.div`
   align-items: center;
 `;
 
-export const BookImage = styled.img`
+export const CardImage = styled.img`
   max-width: 81px;
   max-height: 122px;
   width: 100%;
@@ -41,7 +41,7 @@ export const BookImage = styled.img`
   }
 `;
 
-export const ContentBookInformation = styled.div`
+export const ContentCardInformation = styled.div`
   max-width: 138px;
   width: 100%;
 `;
@@ -51,7 +51,7 @@ export const WrapperMainInformation = styled.div`
   margin-bottom: 8px;
 `;
 
-export const BookTitle = styled.h1`
+export const CardTitle = styled.h1`
   word-break: break-all;
   font-style: normal;
   font-weight: 500;
@@ -69,7 +69,7 @@ export const Ul = styled.ul`
       line-height: 20px;
     }
 
-    & > #authorName {
+    & > #captionItem {
       list-style-position: inside;
       white-space: nowrap;
       overflow: hidden;
