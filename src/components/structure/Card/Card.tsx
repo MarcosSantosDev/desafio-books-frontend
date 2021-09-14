@@ -1,13 +1,15 @@
+import { MouseEventHandler } from 'react';
 import * as S from './Card.styles';
 
 export type CardProps = {
-  id: number;
+  id: string;
   cardImage: string;
   cardTitle: string;
   cardCaptions: string[];
   itemOne: string;
   itemTwo: string;
   itemThree: string;
+  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
 };
 
 export const Card = ({
@@ -17,8 +19,9 @@ export const Card = ({
   itemTwo,
   itemThree,
   cardCaptions = [],
+  onClick,
 }: CardProps) => (
-  <S.Wrapper>
+  <S.Wrapper onClick={onClick}>
     <S.ContentCardImage>
       <S.CardImage src={cardImage} alt="ilustration" />
     </S.ContentCardImage>
