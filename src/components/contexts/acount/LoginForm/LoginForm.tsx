@@ -31,7 +31,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
 
     if (field?.type === 'responseApi') {
       return {
-        message: 'Email e/ou senha incorretos.',
+        message: 'Incorrect email and/or password.',
         hasError: !!field,
       };
     }
@@ -47,7 +47,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
       <S.FormContainer>
         <S.Form onSubmit={handleSubmit(onSubmit)}>
           <S.HeadingContent>
-            <S.Img src={IoasysLogo} alt="Ioasys Books" />{' '}
+            <S.Img src={IoasysLogo} alt="logo ioasys books" />{' '}
             <S.Heading>Books</S.Heading>
           </S.HeadingContent>
           <S.FormGroup>
@@ -57,7 +57,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
                 type="password"
                 name="password"
                 ref={register}
-                label="Senha"
+                label="Password"
               />
               <S.ButtonLogin type="submit">Entrar</S.ButtonLogin>
             </S.BoxRelative>

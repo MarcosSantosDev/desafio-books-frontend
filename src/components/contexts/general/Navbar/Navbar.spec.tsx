@@ -11,10 +11,10 @@ describe('<Navbar />', () => {
     );
   });
 
-  it('should render the Navbar with text "Bem vindo, José!"', () => {
+  it('should render the Navbar with text "Welcome, José!"', () => {
     const { container } = renderWithTheme(
       <Navbar userName="José" logout={logout} />,
     );
-    expect(container.textContent).toEqual(`Bem vindo, José!`);
+    expect(container.textContent).toEqual(`Welcome, José!`);
   });
 });
