@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
     grid-gap: 16px;
     justify-content: left;
 
-    @media (max-width: 600px) {
-      grid-template-columns: repeat(auto-fit, 288px);
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fill, 288px);
       justify-content: center;
     }
   `}
