@@ -10,7 +10,7 @@ export default {
 export const Default: Story<CardProps> = (args) => <Card {...args} />;
 
 Default.args = {
-  id: 1,
+  id: '1ds5f5f',
   cardImage: bookImageOne,
   cardTitle: 'Crossing the Chasm',
   cardCaptions: ['Geoffrey A. Moore'],

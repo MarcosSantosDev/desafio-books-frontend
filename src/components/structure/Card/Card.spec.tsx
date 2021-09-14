@@ -3,7 +3,7 @@ import bookImageOne from 'assets/images/books/book01.png';
 import { Card } from './Card';
 
 const defaultCardData = {
-  id: 1,
+  id: '1ds5f5f',
   cardImage: bookImageOne,
   cardTitle: 'Crossing the Chasm',
   cardCaptions: ['Geoffrey A. Moore'],
