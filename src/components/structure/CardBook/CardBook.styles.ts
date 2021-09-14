@@ -64,7 +64,7 @@ export const Ul = styled.ul`
       line-height: 20px;
     }
 
-    & > #captionItem {
+    & > #author {
       list-style-position: inside;
       white-space: nowrap;
       overflow: hidden;
