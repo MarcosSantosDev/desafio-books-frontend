@@ -48,7 +48,7 @@ export const BackgroundTwo = styled.div`
   `}
 `;
 
-export const Comtainer = styled.div`
+export const Container = styled.div`
   ${() => css`
     position: relative;
     width: calc(100vw - 230px);

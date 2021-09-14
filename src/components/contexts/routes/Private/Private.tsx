@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { getUserInfo, removeClaims } from 'lib/core/session';
 import { Navbar } from 'components/contexts/general';
 import * as S from './Private.styles';
@@ -12,20 +13,22 @@ const getUserName = () => {
 };
 
 export const Private = ({ children }: PrivateProps) => {
+  const navigate = useNavigate();
   const userName = getUserName();
 
   const handleLogout = () => {
     removeClaims();
+    navigate('/login');
   };
 
   return (
     <S.Wrapper>
       <S.BackgroundOne />
       <S.BackgroundTwo />
-      <S.Comtainer>
+      <S.Container>
         <Navbar userName={userName} logout={handleLogout} />
         {children}
-      </S.Comtainer>
+      </S.Container>
     </S.Wrapper>
   );
 };
