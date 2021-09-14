@@ -11,12 +11,12 @@ export type NavbarProps = {
 export const Navbar = ({ userName, logout }: NavbarProps) => (
   <S.Wrapper>
     <S.LogoContent>
-      <S.Img src={IoasysLogo} alt="Logo ioasys books" />{' '}
+      <S.Img src={IoasysLogo} alt="logo ioasys books" />{' '}
       <S.TextContent>Books</S.TextContent>
     </S.LogoContent>
     <S.ContentActions>
       <S.WelcomeUser>
-        Bem vindo, <strong>{userName}!</strong>
+        Welcome, <strong>{userName}!</strong>
       </S.WelcomeUser>{' '}
       <S.LogoutButton type="button" id="btn__logout" onClick={logout}>
         <S.LogoutIcon src={logoutIcon} alt="Click here to logout!" />{' '}

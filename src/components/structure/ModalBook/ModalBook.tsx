@@ -43,19 +43,19 @@ export const ModalBook = ({ toggleModal, showModal, book }: ModalBookProps) => (
           <S.H3>Informações</S.H3>
           <S.Ul>
             <S.Li>
-              Páginas <span>{book.pageCount} páginas</span>
+              Pages <span>{book.pageCount} pages</span>
             </S.Li>
             <S.Li>
-              Editora <span>Editora {book.publisher}</span>
+              Publisher <span>publisher {book.publisher}</span>
             </S.Li>
             <S.Li>
-              Publicação <span>{book.published}</span>
+              Publication <span>{book.published}</span>
             </S.Li>
             <S.Li>
-              Idioma <span>{book.language}</span>
+              Language <span>{book.language}</span>
             </S.Li>
             <S.Li>
-              Título Original <span>{book.title}</span>
+              Original title <span>{book.title}</span>
             </S.Li>
             <S.Li>
               ISBN-10 <span>{book.isbn10}</span>
@@ -66,7 +66,7 @@ export const ModalBook = ({ toggleModal, showModal, book }: ModalBookProps) => (
           </S.Ul>
         </S.ContentDetails>
         <S.ContentPublisher>
-          <S.H3>RESENHA DA EDITORA</S.H3>
+          <S.H3>{`PUBLISHER'S REVIEW`}</S.H3>
           <p>
             <img src={quotesSvg} alt="quotes" /> {book.description}
           </p>
