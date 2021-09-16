@@ -1,40 +1,50 @@
-export type UserProps = {
-  uuid: string;
-  user_name: string;
-  user_mail: string;
+import { LoginResponse } from 'services/auth';
+import {
+  getLocalStorageKey,
+  setLocalStorageKey,
+  removeLocalStorageKey,
+} from 'lib/localStorage';
+import { AUTHORIZATION_TOKEN, USER_DATA } from 'constants/authentication';
+
+export type AuthorizationTokenProps = {
+  'access-token': string;
+  'refresh-token': string;
 };
 
-export const USER_ID = '@user_id';
-export const USER_INFO = '@user_info';
+export const getAuthorizationToken = () => {
+  const authorizationToken: AuthorizationTokenProps | undefined =
+    getLocalStorageKey(AUTHORIZATION_TOKEN);
 
-const EMPTY_USER_INFO: UserProps = {
-  uuid: '',
-  user_name: '',
-  user_mail: '',
+  return authorizationToken;
 };
 
-export const getUserId = () => localStorage.getItem(USER_ID);
-
-export const getUserInfo = (): UserProps => {
-  const userInfoStr = localStorage.getItem(USER_INFO);
-  const userInfo = userInfoStr ? JSON.parse(userInfoStr) : EMPTY_USER_INFO;
-
-  return userInfo;
+export const setAuthorizationToken = (
+  authorizationToken: AuthorizationTokenProps,
+) => {
+  setLocalStorageKey(AUTHORIZATION_TOKEN, authorizationToken);
 };
 
-export const setClaims = (user: UserProps) => {
-  if (user.uuid) {
-    const userInfo: UserProps = {
-      uuid: user.uuid,
-      user_name: user.user_name,
-      user_mail: user.user_mail,
-    };
+export const getUserData = () => {
+  const userData: LoginResponse | undefined = getLocalStorageKey(USER_DATA);
+  return userData;
+};
 
-    localStorage.setItem(USER_ID, user.uuid);
-    localStorage.setItem(USER_INFO, JSON.stringify(userInfo));
+export const setUserData = (userData: LoginResponse) => {
+  setLocalStorageKey(USER_DATA, userData);
+};
+
+export const isAuthenticated = () => {
+  const authorizationToken = getAuthorizationToken();
+  const userData = getUserData();
+
+  if (authorizationToken && userData) {
+    return Boolean(authorizationToken['access-token'] && userData.id);
   }
+
+  return false;
 };
 
-export const removeClaims = () => localStorage.clear();
-
-export const isAuthenticated = () => getUserId() !== null;
+export const clearClaims = () => {
+  removeLocalStorageKey(AUTHORIZATION_TOKEN);
+  removeLocalStorageKey(USER_DATA);
+};
