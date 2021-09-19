@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
-import { TextField, Error } from 'components/form';
+import * as CF from 'components/form';
 import IoasysLogo from 'assets/images/ioasys/logo.png';
 import * as S from './LoginForm.styles';
 import { schema, defaultValues } from './LoginForm.validations';
@@ -51,9 +51,14 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
             <S.Heading>Books</S.Heading>
           </S.HeadingContent>
           <S.FormGroup>
-            <TextField type="text" name="email" ref={register} label="Email" />
+            <CF.TextField
+              type="text"
+              name="email"
+              ref={register}
+              label="Email"
+            />
             <S.BoxRelative>
-              <TextField
+              <CF.TextField
                 type="password"
                 name="password"
                 ref={register}
@@ -63,7 +68,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps) => {
             </S.BoxRelative>
           </S.FormGroup>
         </S.Form>
-        <Error
+        <CF.Error
           leftAling="0%"
           topAling="250px"
           active={errorMessage.hasError}

@@ -1,10 +1,5 @@
 import { useModalContext } from 'contexts';
-import {
-  CardBook,
-  CardBookProps,
-  ModalBook,
-  BookProps,
-} from 'components/structure';
+import * as CS from 'components/structure';
 import * as S from './BookList.styles';
 
 export type BookListProps = {
@@ -13,8 +8,8 @@ export type BookListProps = {
 
 export const BookList = () => {
   const { showModal, setShowModal } = useModalContext();
-  const books: CardBookProps[] = [];
-  const book: BookProps | undefined = undefined;
+  const books: CS.CardBookProps[] = [];
+  const book: CS.BookProps | undefined = undefined;
 
   const handleOpenModal = () => {
     setShowModal(!showModal);
@@ -23,14 +18,14 @@ export const BookList = () => {
   return (
     <S.Wrapper>
       {book && (
-        <ModalBook
+        <CS.ModalBook
           showModal={showModal}
           toggleModal={handleOpenModal}
           book={book}
         />
       )}
       {books.map((book) => (
-        <CardBook
+        <CS.CardBook
           key={book.id}
           id={book.id}
           imageUrl={book.imageUrl}

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Button } from 'components/structure';
+import * as CS from 'components/structure';
 import backgroundMobileLogin from 'assets/images/account/background_mobile-login.png';
 import backgroundLogin from 'assets/images/account/background-login.png';
 
@@ -76,7 +76,7 @@ export const BoxRelative = styled.div`
   position: relative;
 `;
 
-export const ButtonLogin = styled(Button)`
+export const ButtonLogin = styled(CS.Button)`
   position: absolute;
   top: 12px;
   right: 12px;

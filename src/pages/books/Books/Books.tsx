@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
-import { BookList } from 'components/contexts/books';
+import * as CC from 'components/contexts';
 
 export const Books = () => (
   <>
     <Helmet title="Books - Ioasys books" />
-    <BookList />
+    <CC.BookList />
   </>
 );

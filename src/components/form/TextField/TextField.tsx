@@ -1,5 +1,5 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
-import { Error } from 'components/form';
+import * as CF from 'components/form';
 import * as S from './TextField.styles';
 
 export type TextFieldProps = {
@@ -13,7 +13,12 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     <S.Wrapper>
       <S.Label htmlFor={name}>{label}</S.Label>
       <S.TextField type={type} ref={ref} id={name} name={name} {...restProps} />
-      <Error leftAling="0px" topAling="132%" active={!!error} message={error} />
+      <CF.Error
+        leftAling="0px"
+        topAling="132%"
+        active={!!error}
+        message={error}
+      />
     </S.Wrapper>
   ),
 );
