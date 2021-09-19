@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Button as ButtonCore } from 'components/structure';
+import * as CS from 'components/structure';
 
 export const Wrapper = styled.div`
   width: 100vw;
@@ -41,7 +41,7 @@ export const Heading = styled.h1`
   `}
 `;
 
-export const Button = styled(ButtonCore)`
+export const Button = styled(CS.Button)`
   ${({ theme }) => css`
     font-family: ${theme.typography.family.primary};
     background-color: #333333;

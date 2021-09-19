@@ -1,1 +1,1 @@
-export * from './Private/Private';
+export * from './WrapperApp/WrapperApp';

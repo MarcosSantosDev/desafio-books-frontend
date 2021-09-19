@@ -3,8 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { isAuthenticated } from 'lib/core/session';
 import { Login } from 'pages/account';
 import { Books } from 'pages/books';
-import { NotFound } from 'components/contexts/general';
-import { Private } from 'components/contexts/routes';
+import * as CC from 'components/contexts';
 
 export interface RouteProps {
   children?: React.ReactNode;
@@ -29,9 +28,9 @@ const PrivateRoute = ({ element, ...props }: RouteProps) => {
     <Route
       {...props}
       element={
-        <Private>
+        <CC.WrapperApp>
           <>{element}</>
-        </Private>
+        </CC.WrapperApp>
       }
     />
   );
@@ -42,7 +41,7 @@ const AppRoutes = () => (
     <Routes>
       <PrivateRoute path="/" element={<Books />} />
       <PublicRoute path="/login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<CC.NotFound />} />
     </Routes>
   </BrowserRouter>
 );

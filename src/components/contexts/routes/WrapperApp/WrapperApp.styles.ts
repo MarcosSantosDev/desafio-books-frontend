@@ -1,19 +1,17 @@
 import styled, { css } from 'styled-components';
-import background1 from 'assets/images/home/background-one.png';
-import background2 from 'assets/images/home/background-two.png';
+import background from 'assets/images/home/background.png';
 
-const backgroundStyled = css`
+const backgroundImage = css`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-image: url(${background});
 `;
 
-const backgrounRotate = css`
+const backgroundRotate = css`
   transform: rotate(0deg);
 `;
 
@@ -22,28 +20,12 @@ export const Wrapper = styled.div`
     position: relative;
     width: 100vw;
     height: 100vh;
-  `}
-`;
-
-export const BackgroundOne = styled.div`
-  ${() => css`
-    ${backgroundStyled}
-    background-image: url(${background1});
+    overflow-y: scroll;
+    max-height: 100%;
+    ${backgroundImage}
 
     @media (max-width: 600px) {
-      ${backgrounRotate}
-    }
-  `}
-`;
-
-export const BackgroundTwo = styled.div`
-  ${() => css`
-    ${backgroundStyled}
-    background-image: url(${background2});
-    opacity: 0.5;
-
-    @media (max-width: 600px) {
-      ${backgrounRotate}
+      ${backgroundRotate}
     }
   `}
 `;
